@@ -6,7 +6,7 @@
 /*   By: flepple <info@florianepple.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:34:26 by flepple           #+#    #+#             */
-/*   Updated: 2024/04/19 12:45:20 by flepple          ###   ########.fr       */
+/*   Updated: 2024/04/21 20:50:42 by flepple          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 
 # define CHARSET_LEGAL "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz$%_-"
 # define CHARSET_HEX16 "0123456789ABCDEF"
+# define CHARSET_HEX16_LOWER "0123456789abcdef"
 # define CHARSET_PASSWORD_LOW "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 # define CHARSET_PASSWORD_MIDDLE "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 # define CHARSET_PASSWORD_HIGH "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz$%_-"
@@ -50,6 +51,7 @@ char	*uuid(char *);
 // uniqid macros
 
 # define UID_HX16() uniqid(16, CHARSET_HEX16)
+# define UID_HX16L() uniqid(16, CHARSET_HEX16_LOWER)
 # define UUID_36() uuid(NULL)
 
 #endif // UNIQID_H
