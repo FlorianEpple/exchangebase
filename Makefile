@@ -10,7 +10,7 @@ HFILES = $(addprefix $(INCLUDES)/, types.h uniqid.h file.h stds.h)
 OFILES = $(CFILES:%.c=%.o)
 
 
-NAME = exchange
+NAME = exchange.out
 
 all: $(NAME)
 
