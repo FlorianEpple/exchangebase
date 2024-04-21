@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   types.h                                            :+:      :+:    :+:   */
+/*   stds.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flepple <info@florianepple.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 12:46:32 by flepple           #+#    #+#             */
-/*   Updated: 2024/04/19 13:37:14 by flepple          ###   ########.fr       */
+/*   Updated: 2024/04/19 13:36:58 by flepple          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./file.h"
-#include "./stds.h"
-#include "./uniqid.h"
+#include <stdlib.h>
 
-#ifndef TYPES_H
-# define TYPES_H
+#ifndef STDS_H
+# define STDS_H
 
-#endif // TYPES_H
+// functions
+
+int		eb_strlen(char *);
+char	*eb_strdup(char *);
+
+#endif // STDS_H

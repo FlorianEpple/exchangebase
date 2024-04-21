@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   types.h                                            :+:      :+:    :+:   */
+/*   file.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flepple <info@florianepple.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 12:46:32 by flepple           #+#    #+#             */
-/*   Updated: 2024/04/19 13:37:14 by flepple          ###   ########.fr       */
+/*   Updated: 2024/04/19 13:33:16 by flepple          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./file.h"
-#include "./stds.h"
-#include "./uniqid.h"
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
 
-#ifndef TYPES_H
-# define TYPES_H
+#ifndef FILE_H
+# define FILE_H
 
-#endif // TYPES_H
+// functions
+
+char	*file_get_line(char *, unsigned long);
+
+#endif // FILE_H

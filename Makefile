@@ -1,21 +1,24 @@
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
+CFLAGS_LEAKS = -fcolor-diagnostics -fansi-escape-codes -fsanitize=address
 
-SOURCES = srcs
+SRCS = srcs
 INCLUDES = includes
-CFILES = $(addprefix $(SOURCES)/, main.c)
-HFILES = $(addprefix $(INCLUDES)/, types.h)
-OFILES = $(CFILES:.c=.o)
 
-NAME = exchange-base
+CFILES = $(addprefix $(SRCS)/, main.c uniqid.c file.c stds.c)
+HFILES = $(addprefix $(INCLUDES)/, types.h uniqid.h file.h stds.h)
+OFILES = $(CFILES:%.c=%.o)
+
+
+NAME = exchange
 
 all: $(NAME)
 
-$(NAME): $(OFILES)
-	$(CC) $(CFLAGS) -o $(NAME) $(OFILES)
+$(NAME): $(OFILES) $(LIBS)
+	$(CC) $(CFLAGS) -o $@ $(OFILES) $(LIBS)
 
-$(SOURCES)/%.o: $(SOURCES)/%.c $(HFILES)
-	$(CC) $(CFLAGS) -c -o $@ $<
+%.o: %.c $(HFILES)
+	$(CC) $(CFLAGS) -c -o $@ $< -I$(INCLUDES)
 
 clean:
 	rm -f $(OFILES)
@@ -25,4 +28,11 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+leaks: fclean $(OFILES)
+	@clear
+	@echo "leak build"
+	$(CC) $(CFLAGS) $(CFLAGS_LEAKS) -o $(NAME) $(OFILES)
+	@clear
+	@./$(NAME)
+
+.PHONY: all clean fclean re libs leaks
