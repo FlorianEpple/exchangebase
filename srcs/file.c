@@ -6,20 +6,20 @@
 /*   By: flepple <info@florianepple.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 12:58:19 by flepple           #+#    #+#             */
-/*   Updated: 2024/04/21 20:48:29 by flepple          ###   ########.fr       */
+/*   Updated: 2024/04/23 19:43:36 by flepple          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/file.h"
 #include "../includes/types.h"
 
-char	*file_get_line(char *filename, unsigned long line)
+char	*file_get_line(char *filename, line_t line)
 {
-	int				fd;
-	int				i;
-	char			buffer[128];
-	unsigned long	l;
-	ssize_t			bytes;
+	int		fd;
+	int		i;
+	char	buffer[128];
+	line_t	l;
+	ssize_t	bytes;
 
 	if (line == 0)
 		return (NULL);

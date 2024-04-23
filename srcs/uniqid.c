@@ -6,53 +6,12 @@
 /*   By: flepple <info@florianepple.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:11:09 by flepple           #+#    #+#             */
-/*   Updated: 2024/04/19 13:38:33 by flepple          ###   ########.fr       */
+/*   Updated: 2024/04/23 17:25:48 by flepple          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/types.h"
 #include "../includes/uniqid.h"
-
-int	eb_suitable(char *str, char *charset)
-{
-	int	i;
-	int	j;
-	int	f;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		j = 0;
-		f = 0;
-		while (charset[j] != '\0')
-			if (str[i] == charset[j++])
-			{
-				f = 1;
-				break ;
-			}
-		if (f == 0)
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int	eb_isspace(char c)
-{
-	if (c == '\t')
-		return (1);
-	if (c == '\n')
-		return (1);
-	if (c == '\v')
-		return (1);
-	if (c == '\f')
-		return (1);
-	if (c == '\r')
-		return (1);
-	if (c == ' ')
-		return (1);
-	return (0);
-}
 
 char	rnd_c(char *charset)
 {
