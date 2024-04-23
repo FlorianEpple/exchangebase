@@ -5,8 +5,8 @@ CFLAGS_LEAKS = -fcolor-diagnostics -fansi-escape-codes -fsanitize=address
 SRCS = srcs
 INCLUDES = includes
 
-CFILES = $(addprefix $(SRCS)/, main.c uniqid.c file.c stds.c)
-HFILES = $(addprefix $(INCLUDES)/, types.h uniqid.h file.h stds.h)
+CFILES = $(addprefix $(SRCS)/, main.c uniqid.c file.c stds.c parse_db.c)
+HFILES = $(addprefix $(INCLUDES)/, types.h uniqid.h file.h stds.h parse_db.h)
 OFILES = $(CFILES:%.c=%.o)
 
 
