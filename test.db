@@ -1,7 +1,15 @@
-test.db
-***
-id
-name
-age
-***
-[21b0ae06009b0c02]
+[&]
+id=
+name=
+note=
+date=
+[60e601e16813ae8e]
+id=1
+name="Florian Epple"
+note="male"
+date="23.04.2024 16:54:32"
+[0285bb8b144e42c8]
+id=1
+name="Florian Epple"
+note="male"
+date="23.04.2024 16:54:32"
